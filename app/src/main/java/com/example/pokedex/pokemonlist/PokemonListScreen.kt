@@ -196,15 +196,15 @@ fun PokedexEntry(
                         modifier = Modifier.scale(0.5f)
                     )
                 },
-                modifier = Modifier
-                    .size(120.dp)
-                    .align(CenterHorizontally),
                 onSuccess = { success ->
                     val drawable = success.result.drawable
                     viewModel.calcDominantColor(drawable) { color ->
                         dominantColor = color
                     }
-                }
+                },
+                modifier = Modifier
+                    .size(120.dp)
+                    .align(CenterHorizontally),
             )
             Text(
                 text = entry.pokemonName,
